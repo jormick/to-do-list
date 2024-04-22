@@ -12,7 +12,7 @@ body {
 
 .todo-space {
     display: flex;
-    margin: 0;
+    margin: auto;
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(135deg, #153677, #7D43B0);
@@ -38,6 +38,13 @@ h2 {
     box-shadow: 5px 5px 10px 0 black;
     animation-duration: 1s;
     animation-name: field-move;
+}
+
+.todo-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .header {
@@ -83,31 +90,39 @@ form {
     align-items: center;
 }
 
-ul li {
+.plans-container {
+    width: 80%;
     user-select: none;
     list-style: none;
     display: flex;
-    flex-direction: column;
     font-size: 20px;
-    justify-content: space-between;
-    align-items: center;
+    align-items: start;
     border: none;
     outline: none;
     padding-left: 0;
 }
 
-li {
-    margin: 10px;
-    padding: 10px;
+.user-plans {
+    padding-left: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
 }
 
 ul {
-    padding-left: 0;
+    display: flex;
 }
 
-.checked {
-    color: darkgrey;
-    text-decoration: line-through;
+li {
+    margin-bottom: 20px;
+}
+
+.delete-button{
+    display: flex;
+    background: #ff3636;
+    color: white;
+    border-radius: 5px;
+    border-color: #ff3636;
 }
 
 @keyframes field-move {
