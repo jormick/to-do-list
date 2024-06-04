@@ -22,8 +22,9 @@ body {
 
 h2 {
     font-size: xxx-large;
-    max-height: 5vw;
-    margin-top: 2vw;
+    max-height: 75px;
+    margin-top: 15px;
+    margin-bottom: 25px;
 }
 
 .todo-app-field {
@@ -40,16 +41,17 @@ h2 {
     animation-name: field-move;
 }
 
-.todo-header{
+.todo-header {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 490px;
 }
 
 .header {
     display: flex;
-    padding-bottom: 2vh;
+    padding-bottom: 20px;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: darkgrey;
@@ -62,10 +64,10 @@ form {
 }
 
 .input-field {
+    padding-left: 10px;
     font-weight: bold;
     font-size: 20px;
     display: flex;
-    justify-content: space-between;
     width: 400px;
     height: 40px;
     align-items: center;
@@ -80,9 +82,7 @@ form {
     justify-content: center;
     display: flex;
     margin-left: 2vw;
-    background: linear-gradient(135deg, #153677, #7D43B0);
-    color: white;
-    width: 5vw;
+    width: 50px;
     height: 40px;
     border-radius: 10px;
     border: none;
@@ -90,8 +90,16 @@ form {
     align-items: center;
 }
 
+.add:hover {
+    background: #463B8F;
+    animation-name: add-move;
+    animation-duration: 500ms;
+    color: white;
+}
+
 .plans-container {
-    width: 80%;
+    margin-top: 15px;
+    width: 490px;
     user-select: none;
     list-style: none;
     display: flex;
@@ -100,29 +108,47 @@ form {
     border: none;
     outline: none;
     padding-left: 0;
+    flex-direction: column;
 }
 
 .user-plans {
     padding-left: 0;
     list-style-type: none;
     display: flex;
-    flex-direction: column;
 }
 
 ul {
     display: flex;
+    text-overflow: ellipsis;
 }
 
 li {
+    display: flex;
+    max-width: 490px;
     margin-bottom: 20px;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.delete-button{
+.delete-button {
+    font-size: large;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    color: black;
+    border: none;
+    outline: none;
+    width: 50px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.delete-button:hover {
     background: #ff3636;
+    animation-name: delete-move;
+    animation-duration: 500ms;
     color: white;
-    border-radius: 5px;
-    border-color: #ff3636;
 }
 
 @keyframes field-move {
@@ -136,5 +162,46 @@ li {
         border-radius: 6px;
         box-shadow: 5px 5px 10px 0 black;
     }
+}
 
+@keyframes add-move {
+    from {
+        background: #f0f0f0;
+        color: black;
+    }
+
+    to {
+        background: #463B8F;
+        color: white;
+    }
+}
+
+@keyframes delete-move {
+    from {
+        background: #f0f0f0;
+    }
+
+    to {
+        background: #ff3636;
+        color: white;
+    }
+}
+
+@media (max-width: 800px) {
+    .todo-app-field {
+        width: 400px;
+
+    }
+
+    .header {
+        width: 300px;
+    }
+
+    .input-field {
+        width: 250px
+    }
+
+    .add {
+        width: 50px;
+    }
 }
