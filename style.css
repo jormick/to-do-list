@@ -81,7 +81,7 @@ form {
     font-size: large;
     justify-content: center;
     display: flex;
-    margin-left: 2vw;
+    margin-left: 40px;
     width: 50px;
     height: 40px;
     border-radius: 10px;
@@ -100,9 +100,9 @@ form {
 .plans-container {
     margin-top: 15px;
     width: 490px;
+    max-width: 490px;
     user-select: none;
     list-style: none;
-    display: flex;
     font-size: 20px;
     align-items: start;
     border: none;
@@ -122,9 +122,30 @@ ul {
     text-overflow: ellipsis;
 }
 
+.actual-plan {
+    padding: 5px 5px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 0 darkgray;
+    align-items: center;
+}
+
+.plan-text{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 490px;
+}
+
+.todo-item-text {
+    word-spacing: 5px;
+
+    width: 390px;
+    word-wrap: break-word;
+}
+
 li {
     display: flex;
-    max-width: 490px;
+    width: 490px;
     margin-bottom: 20px;
     flex-direction: row;
     justify-content: space-between;
@@ -149,6 +170,16 @@ li {
     animation-name: delete-move;
     animation-duration: 500ms;
     color: white;
+}
+
+.edit-input{
+    font-family: Dubai, sans-serif;
+    font-size: large;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    border: none;
+    outline: none;
+    width: 85%;
 }
 
 @keyframes field-move {
